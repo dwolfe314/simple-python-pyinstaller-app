@@ -27,6 +27,19 @@ pipeline {
                 }
             }
         }
+        stage('Deliver') {
+            agent any
+            environment {
+                VOLUME = '$(pwd)/sources:/src'
+                IMAGE = 'cdrx/pyinstaller-linux:python2'
+            }
+            steps {
+                dir(path: env.BUILD_ID {
+                    unstash(name: 'compiled-results')
+                    sh "docker run --rm -v ${VOLUME} ${IMAGE} 'rm -rf build dist'"
+                }
+            }
+        }
     }
 }
 
