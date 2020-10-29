@@ -41,7 +41,7 @@ pipeline {
                     unstash(name: 'compiled-results')
                     echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL} workspace ${env.WORKSPACE}"
                     echo 'Before pyinstaller'
-                    sh "docker run --rm -v ${pwd}/src ${IMAGE} 'pyinstaller --onefile add2vals.py'"
+                    sh "docker run --rm -v ${pwd}src ${IMAGE} 'pyinstaller --onefile add2vals.py'"
                 }
             }
             post {
