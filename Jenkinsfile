@@ -40,7 +40,9 @@ pipeline {
                 dir(path: env.BUILD_ID) {
                     unstash(name: 'compiled-results')
                     echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL} workspace ${env.WORKSPACE}"
+                    echo 'Before docker run'
                     sh "docker run --rm -v ${VOLUME} ${IMAGE}"
+                    echo 'Before pyinstaller'
                     sh 'pyinstaller -F  add2vals.py'
                 }
             }
