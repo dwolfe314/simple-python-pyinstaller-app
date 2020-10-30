@@ -42,7 +42,7 @@ pipeline {
                     echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL} workspace ${env.WORKSPACE}"
                     echo 'Before pyinstaller'
                     sh 'pwd'
-                    sh 'cd ../sources'
+                    sh 'cd ..'
                     sh 'pwd'
                     sh 'ls'
                     sh 'cp add2vals.py /src/add2vals.py'
