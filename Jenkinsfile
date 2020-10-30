@@ -43,7 +43,7 @@ pipeline {
                     echo 'Before pyinstaller'
                     sh 'pwd'
                     sh 'cat ../sources/add2vals.py'
-                    sh "docker run --rm -v ${VOLUME} ${IMAGE} 'pyinstaller -F add2vals.py'"
+                    sh "docker run --rm -v ${VOLUME} ${IMAGE} 'pyinstaller -F sources/add2vals.py'"
                 }
             }
             post {
