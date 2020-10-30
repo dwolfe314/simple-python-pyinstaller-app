@@ -45,7 +45,7 @@ pipeline {
                     sh 'cd ..'
                     sh 'pwd'
                     sh 'ls'
-                    sh "docker run --rm -v ${VOLUME} --entrypoint pwd ${IMAGE}"
+                    sh "docker run --rm -v ${VOLUME} --entrypoint cat ${IMAGE} add2vals.py"
                 }
             }
             post {
