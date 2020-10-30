@@ -33,7 +33,7 @@ pipeline {
         stage('Deliver') {
             agent any
             environment {
-                VOLUME = '$(pwd)../sources:/src'
+                VOLUME = '$(pwd)/sources:/src'
                 IMAGE = 'cdrx/pyinstaller-linux:python2'
             }
             steps {
@@ -43,7 +43,7 @@ pipeline {
                     echo 'Before pyinstaller'
                     sh 'pwd'
                     sh 'cat ../sources/add2vals.py'
-                    sh "docker run --rm -v ${VOLUME} ${IMAGE} 'pyinstaller -F add2vals.py'"
+                    sh "docker run --rm -v ${VOLUME} --entrypoint ls"
                 }
             }
             post {
