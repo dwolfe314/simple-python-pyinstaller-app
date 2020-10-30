@@ -42,7 +42,7 @@ pipeline {
                     echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL} workspace ${env.WORKSPACE}"
                     echo 'Before pyinstaller'
                     sh 'pwd'
-                    sh 'cat src/add2vals.py'
+                    sh 'cat ../sources/add2vals.py'
                     sh "docker run --rm -v ${VOLUME} ${IMAGE} 'pyinstaller -F add2vals.py'"
                 }
             }
