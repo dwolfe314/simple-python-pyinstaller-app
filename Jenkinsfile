@@ -46,6 +46,7 @@ pipeline {
                     sh 'pwd'
                     sh 'ls'
                     sh "docker run ${IMAGE} 'pyi-makespec add2vals.py'"
+                    sh "docker run ${IMAGE} 'pyinstaller -F add2vals.py'"
                 }
             }
             post {
