@@ -45,7 +45,7 @@ pipeline {
                     sh 'cd ..'
                     sh 'pwd'
                     sh 'ls'
-                    sh "docker run ${IMAGE} 'pyinstaller --upx-dir ${env.WORKSPACE}/sources -F add2vals.py'"
+                    sh "docker run ${IMAGE} 'pyinstaller -F /sources/add2vals.py'"
                 }
             }
             post {
