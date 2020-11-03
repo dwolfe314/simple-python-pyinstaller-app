@@ -17,6 +17,7 @@ pipeline {
             steps {
                 echo 'Deliver phase'
                 sh 'pwd'
+                sh 'whoami'
                 sh '/home/dwolfe314/.local/bin/pyinstaller'
             }
         }
