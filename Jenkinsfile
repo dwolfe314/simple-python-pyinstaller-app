@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo 'Deliver phase'
                 sh 'pwd'
-                sh '/home/dwolfe314/.local/bin/pyinstaller --onefile sources/add2vals.py'
+                sh 'pyinstaller -F sources/add2vals.py'
             }
         }
     }
