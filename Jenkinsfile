@@ -1,10 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('Stage 1') {       
+        stage('Build') {       
             steps {
-                echo 'Hello Python World'
+                echo 'Build phase'
                 sh 'python3 -m py_compile sources/add2vals.py sources/calc.py'
+            }
+        }
+        stage ('Test') {
+            steps {
+                echo 'Test phase'
+                sh 'py.test --junit-xml test-reports/results.xml sources/test_calc.py'
             }
         }
     }
