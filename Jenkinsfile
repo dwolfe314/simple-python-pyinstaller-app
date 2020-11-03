@@ -1,9 +1,9 @@
 pipeline {
-    agent none
+    agent any
     stages {
-        stage('Build') {       
+        stage('Stage 1') {       
             steps {
-                sh 'python3 -m py_compile sources/add2vals.py sources/calc.py'
+                echo 'Hello Python World'
             }
         }
     }
