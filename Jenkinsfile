@@ -15,6 +15,8 @@ pipeline {
         }
         stage ('Deliver') {
             steps {
+                echo 'Deliver phase'
+                sh 'pwd'
                 sh 'pyinstaller --onefile sources/add2vals.py'
             }
         }
